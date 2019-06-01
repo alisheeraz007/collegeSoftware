@@ -34,7 +34,7 @@ body{
     transform: translate(-50%,0);
     max-width: 600px;
 }
-.inputDiv input, .inputDiv2 input{
+.inputDiv input, .inputDiv2 input, .signInDiv input{
     width: 65%;
     height: 35px;
     margin: 5px;
@@ -44,21 +44,21 @@ body{
     font-size: 15px;
     transition: 0.3s ease-out;
 }
-.inputDiv input:focus, .inputDiv2 input:focus{
+.inputDiv input:focus, .inputDiv2 input:focus, .signInDiv input:focus{
     outline: none;
     font-size: 17px;
     border: 1px solid #2b4c88;
 }
-.inputDiv div, .inputDiv2 div{
+.inputDiv div, .inputDiv2 div, .signInDiv div{
     width: 100%;
     text-align: -webkit-center;
     margin-top: 10%;
 }
-.inputDiv div p, .inputDiv2 div p{
+.inputDiv div p, .inputDiv2 div p, .signInDiv p{
     width: 60%;
     color: #2b4c88;
 }                    
-.inputDiv button, .inputDiv div p button,.inputDiv2 button, .inputDiv2 div p button{
+.inputDiv button, .inputDiv div p button,.inputDiv2 button, .inputDiv2 div p button, .signInDiv button, .signInDiv div p button {
     width: 63%;
     height: 35px;
     margin-top: 12px;
@@ -154,8 +154,8 @@ body{
     overflow: scroll;
     width: 100%;
     height: 100%;
-    background-color: rgba(238, 245, 251, 0.86);
-    z-index: 2;
+    background-color: rgba(21, 29, 36, 0.86);
+    z-index: 5;
 }
 .forSignUp{
     width: 100%;
@@ -175,12 +175,24 @@ body{
     border-radius: 10px;
     max-width: 211px;
 }
+.buttonFocus{
+  border: 0;
+  margin-left: -5%;
+  border: 0;
+  padding: 5px;
+  color: white;
+  width: 33%;
+  border-radius: 10px;
+  max-width: 211px;
+  background-color: rgb(89, 108, 148) !important;
+  outline: none;
+  z-index: 3;
+}
 .forSignUp :first-child{
     margin-left: 0 !important
 }
 .forSignUp button:focus{
-    background-color: rgb(89, 108, 148);
-    outline: none;
+  outline: none;
 }
 .inputDiv2{
     width: 85%;
@@ -198,7 +210,7 @@ body{
     border-radius: 8px;
     z-index: 2;
 }
-.inputDiv2 h3{
+.inputDiv2 h3, .signInDiv h3{
     margin-bottom: 2%;
     color: #2b4c88;
     font-family: cursive;
@@ -240,4 +252,38 @@ body{
     position: absolute;
     top: 18%;
     color: #2b4c88;
+}
+.signInDiv{
+  width: 85%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-800%,-50%);
+  max-width: 500px;
+  background-color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 8px;
+  z-index: 2;
+  transition: 0.3s
+}
+.signInDivOpen{
+  width: 85%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  max-width: 500px;
+  background-color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 8px;
+  z-index: 2;
+  transition: 0.3s
 }

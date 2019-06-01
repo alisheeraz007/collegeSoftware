@@ -1,27 +1,78 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom'
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
-import changePath from '../common/common'
+import AdminSignIn from './AdminSignIn';
 
 class AdminSignUp extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+            adminUsername: null,
+            password: null,
+            confirmPassword: null,
+            uid: null,
+            adminSignIn: false,
+        }
+    }
+
+    authStateChange = () => {
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                let uid = user.uid;
+                this.setState({
+                    uid,
+                })
+            } else {
+                this.props.history.push("/")
+            }
+        })
+    }
+
+    gettingValue = (ev) => {
+        this.setState({
+            [ev.target.name]: ev.target.value
+        }, () => {
+            // console.log(this.props)
+        })
+    }
+
+
+    adminSignUp = (ev) => {
+        ev.preventDefault()
+        let obj = {
+            adminUsername: this.state.adminUsername,
+            password: this.state.password,
+        }
+        firebase.database().ref().child(this.state.uid).child("admin").child(this.state.adminUsername).set(obj)
+    }
+
+    adminSignIn=()=>{
+        this.setState({
+            adminSignIn: true
+        })
+        setTimeout(()=>{
+            document.getElementById("adminSignIn").classList += " signInDivOpen"
+        },500)
+    }
+
+    componentWillMount() {
+        this.authStateChange()
     }
 
     render() {
         return (
             <div className="adminSignUp">
-                <p className='iconForAdmin'><i class="fas fa-long-arrow-alt-down"></i></p>
+            {this.state.adminSignIn ? <AdminSignIn props={this.props}/>: null}
+                <p className='iconForAdmin'><i className="fas fa-long-arrow-alt-down"></i></p>
                 <div className="inputDiv2">
                     <h3>Admin Sign Up</h3>
-                    <form onSubmit={(ev) => { this.signUp(ev) }}>
+                    <form onSubmit={(ev) => { this.adminSignUp(ev) }}>
                         <input
                             type="text"
-                            name="userName"
+                            name="adminUsername"
                             onChange={(ev) => { this.gettingValue(ev) }}
-                            placeholder="Username"
+                            placeholder="Admin Username"
                             required
                             autoFocus
                         />
@@ -46,7 +97,7 @@ class AdminSignUp extends Component {
                             Allready have an account ? Login to your account.<br />
                             <button
                                 name=""
-                                onClick={(ev) => changePath(ev.target.name, this.props)}
+                                onClick={(ev) => this.adminSignIn(ev)}
                             >Sign In</button>
                         </p>
                     </div>
