@@ -31,18 +31,18 @@ class CompanySignIn extends Component {
                 if (this.state.companyUsername === this.props.props.props.state.companyData[i].companyUsername
                     && this.state.password === this.props.props.props.state.companyData[i].password) {
                     this.props.props.props.confirmation(name)
-                    // this.props.history.push("/CompanyPannelPage")
-                    // console.log("aaa")
+                    this.props.props.props.confirmation("companyConfirmation")
+                    this.props.history.push("/CompanyPannelPage")
                 }
             }
         }
     }
 
     render() {
-        // console.log(this.props.props.props.state.companyConfirmation)
+        // console.log(this.props)
         return (
             <div className="adminPasscodeInputDiv">
-                <div id="companySignIn" className="signInDiv">
+                <div id="companySignIn" className ="signInDiv">
                     <h3>Company Sign In</h3>
                     <form>
                         <input

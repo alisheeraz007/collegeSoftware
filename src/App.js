@@ -9,9 +9,12 @@ import 'firebase/database';
 import SignInPage from './components/SignInPage'
 import SignUpPage from './components/SignUpPage'
 import MainDashBoard from './components/MainDashBoard'
-import AdminSignIn from './components/AdminSignIn';
-import CompanySignIn from './components/CompanySignIn';
-import StudentSignIn from './components/StudentSignIn';
+// import AdminSignIn from './components/AdminSignIn';
+// import CompanySignIn from './components/CompanySignIn';
+// import StudentSignIn from './components/StudentSignIn';
+import AdminPannelPage from './components/AdminPannelPage';
+import CompanyPannelPage from './components/CompanyPannelPage';
+import StudentPannelPage from './components/StudentPannelPage';
 
 firebase.initializeApp(firebaseConfig)
 
@@ -19,9 +22,9 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-        adminConfirmation:false,
-        companyConfirmation:false,
-        studentConfirmation:false,
+      adminConfirmation: false,
+      companyConfirmation: false,
+      studentConfirmation: false,
     }
   }
 
@@ -60,7 +63,7 @@ class App extends Component {
     })
   }
 
-  confirmation=(name)=>{
+  confirmation = (name) => {
     let confirmation = name;
     this.setState({
       [confirmation]: true
@@ -92,6 +95,27 @@ class App extends Component {
           <Route
             path="/MainDashBoard"
             render={() => <MainDashBoard
+              state={this.state}
+              confirmation={this.confirmation}
+            />} />
+
+          <Route
+            path="/AdminPannelPage"
+            render={() => <AdminPannelPage
+              state={this.state}
+              confirmation={this.confirmation}
+            />} />
+
+          <Route
+            path="/CompanyPannelPage"
+            render={() => <CompanyPannelPage
+              state={this.state}
+              confirmation={this.confirmation}
+            />} />
+
+          <Route
+            path="/StudentPannelPage"
+            render={() => <StudentPannelPage
               state={this.state}
               confirmation={this.confirmation}
             />} />

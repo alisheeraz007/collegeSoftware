@@ -31,7 +31,8 @@ class AdminSignIn extends Component {
                 if (this.state.adminUsername === this.props.props.props.state.adminData[i].adminUsername
                     && this.state.password === this.props.props.props.state.adminData[i].password) {
                     this.props.props.props.confirmation(name)
-                    // this.props.history.push("/AdminPannelPage")
+                    this.props.props.props.confirmation("adminConfirmation")
+                    this.props.history.push("/AdminPannelPage")
                     // console.log("aaa")
                 }
             }

@@ -32,8 +32,9 @@ class StudentSignIn extends Component {
                 if (this.state.studentUsername === this.props.props.props.state.studentData[i].studentUsername
                     && this.state.password === this.props.props.props.state.studentData[i].password) {
                     this.props.props.props.confirmation(name)
-                    // this.props.history.push("/StudentPannelPage")
-                    // console.log("aaa")
+                    this.props.props.props.confirmation("studentConfirmation")
+                    this.props.history.push("/StudentPannelPage")
+                    console.log("aaa")
                 }
             }
         }
