@@ -34,7 +34,7 @@ class StudentSignIn extends Component {
                     this.props.props.props.confirmation(name)
                     this.props.props.props.confirmation("studentConfirmation")
                     this.props.history.push("/StudentPannelPage")
-                    console.log("aaa")
+                    // console.log("aaa")
                 }
             }
         }
@@ -42,7 +42,7 @@ class StudentSignIn extends Component {
 
 
     render() {
-        console.log(this.props.props.props.state.studentConfirmation)
+        // console.log(this.props.props.props.state.studentConfirmation)
         return (
             <div className="adminPasscodeInputDiv">
                 <div id="studentSignIn" className="signInDiv">

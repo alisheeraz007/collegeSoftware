@@ -56,6 +56,12 @@ class App extends Component {
               studentData,
             })
           }
+          if (snap.val().jobs) {
+            let jobs = Object.values(snap.val().jobs)
+            this.setState({
+              jobs,
+            })
+          }
         })
       } else {
         this.props.history.push("/")

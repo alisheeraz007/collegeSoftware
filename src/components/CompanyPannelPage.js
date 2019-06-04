@@ -61,7 +61,7 @@ class CompanyPannelPage extends Component {
         return (
             // this.state.uid?
             <div className="mainContainer">
-                {this.state.account ? <CompanyAccount/> : null}
+                {this.state.account ? <CompanyAccount props={this.props} state={this.state}/> : null}
                 <div className="toggleButtonDiv">
                     <button id="students" className="buttonFocus" onClick={this.students}>Students</button>
                     <button id="account" onClick={this.account}>Add Job</button>

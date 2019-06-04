@@ -4,12 +4,14 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
 import Loader from './Loader'
+import JobPortal from './JobPortal'
 
 class StudentPannelPage extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            uid: null
+            uid: null,
+            jobs: true,
         }
     }
 
@@ -32,21 +34,40 @@ class StudentPannelPage extends Component {
         })
     }
 
+    account = () => {
+        this.setState({
+            account: true,
+            jobs: false
+        })
+        document.getElementById("jobs").className = null
+        document.getElementById("account").className = "buttonFocus"
+    }
+    jobs = () => {
+        this.setState({
+            account: false,
+            jobs: true
+        })
+        document.getElementById("jobs").className = "buttonFocus"
+        document.getElementById("account").className = null
+    }
+
+
     componentWillMount() {
-        this.authStateChange()
+        // this.authStateChange()
     }
 
     render() {
         return (
-            this.state.uid?
+            // this.state.uid?
             <div className="mainContainer">
-                <div className="headerDiv">
-                    <p>
-                        Student Pannel Page
-                    </p>
+                {this.state.jobs ? <JobPortal props={this.props} state={this.state}/> : null}
+                <div className="toggleButtonDiv">
+                    <button id="jobs" className="buttonFocus" onClick={this.jobs}>jobs</button>
+                    <button id="account" onClick={this.account}>My Account</button>
+                    <button><i className="fas fa-sign-out-alt"></i></button>
                 </div>
-            </div>:
-            <Loader/>
+            </div>
+            //: <Loader/>
         )
     }
 }
