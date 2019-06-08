@@ -399,12 +399,13 @@ fieldset input{
   border-radius: 5px;
   font-size: 15px;
   transition: 0.3s ease-out;
+  margin-left: 5px;
 }
 fieldset th{
   text-align: left;
   vertical-align: text-bottom;
   font-size: 15px;
-  width: 39%;
+  width: 42%;
 }
 fieldset input:focus{
   outline: none;
@@ -419,6 +420,7 @@ fieldset textarea{
   border-radius: 5px;
   font-size: 15px;
   transition: 0.3s ease-out;
+  margin-left: 5px;
 }
 fieldset textarea:focus{
   outline: none;

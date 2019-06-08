@@ -5,6 +5,7 @@ import 'firebase/auth';
 import 'firebase/database';
 import Loader from './Loader'
 import JobPortal from './JobPortal'
+import StudentResumeForm from './StudentResumeForm'
 
 class StudentPannelPage extends Component {
     constructor(props) {
@@ -12,6 +13,7 @@ class StudentPannelPage extends Component {
         this.state = {
             uid: null,
             jobs: true,
+            account: false,
         }
     }
 
@@ -61,6 +63,7 @@ class StudentPannelPage extends Component {
             // this.state.uid?
             <div className="mainContainer">
                 {this.state.jobs ? <JobPortal props={this.props} state={this.state}/> : null}
+                {this.state.account ? <StudentResumeForm props={this.props} state={this.state}/> : null}
                 <div className="toggleButtonDiv">
                     <button id="jobs" className="buttonFocus" onClick={this.jobs}>jobs</button>
                     <button id="account" onClick={this.account}>My Account</button>
