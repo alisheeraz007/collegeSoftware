@@ -62,6 +62,7 @@ class StudentResumeForm extends Component {
 
     render() {
         // console.log(this.props.props.state.jobs)
+        // console.log(this.props.props)
         return (
             <div className="mainContainer">
                 <div className="account">
@@ -158,6 +159,7 @@ class StudentResumeForm extends Component {
                                                  <br />
                                             </td>
                                         </tr>
+
                                     </tbody>
                                 </table>
                             </fieldset><br />
@@ -190,6 +192,18 @@ class StudentResumeForm extends Component {
                                                 placeholder="Other Courses"
                                                 name="otherCourses"
                                                 onChange={(ev) => this.gettingValue(ev)}
+                                            /></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Experience</th>
+                                            <td><textarea
+                                                cols="50"
+                                                rows="3"
+                                                type="text"
+                                                placeholder="Experience"
+                                                name="experience"
+                                                onChange={(ev) => this.gettingValue(ev)}
+                                                required
                                             /></td>
                                         </tr>
                                     </tbody>

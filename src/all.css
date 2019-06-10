@@ -160,7 +160,7 @@ body{
 .forSignUp{
     width: 100%;
     position: fixed;
-    top: 10%;
+    top: 0;
     text-align: center;
     z-index: 3;
 }
@@ -171,7 +171,7 @@ body{
     padding: 5px;
     background-color: #2b4c88;
     color: white;
-    width: 33%;
+    width: 36.5%;
     border-radius: 10px;
     max-width: 211px;
 }
@@ -200,7 +200,7 @@ body{
     margin-left: auto;
     margin-right: auto;
     position: absolute;
-    top: 23%;
+    top: 12%;
     left: 50%;
     transform: translate(-50%,0);
     max-width: 500px;
@@ -228,7 +228,7 @@ body{
 }
 .adminSignUp .iconForAdmin i {
     position: absolute;
-    top: 18%;
+    top: 8%;
     color: #2b4c88;
 }
 .adminSignUp .iconForCompany{
@@ -239,7 +239,7 @@ body{
 }
 .adminSignUp .iconForCompany i {
     position: absolute;
-    top: 18%;
+    top: 8%;
     color: #2b4c88;
 }
 .adminSignUp .iconForStudent{
@@ -250,7 +250,7 @@ body{
 }
 .adminSignUp .iconForStudent i {
     position: absolute;
-    top: 18%;
+    top: 8%;
     color: #2b4c88;
 }
 .signInDiv{
@@ -463,17 +463,24 @@ fieldset td{
     border-radius: 5px; 
 }
 .jobDiv{
+  color: #2b4c88;
   text-align: left;
   width: 90%;
   max-width: 100%;
-  border: 1px solid;
+  border: 1px solid #2b4c88;
   padding: 15px;
   font-size: 24px;
   border-radius: 10px;
   margin-top: 5px;
 }
+.jobDiv span{
+  font-size: 12px;
+  float: right;
+  color: #6c8ba5;
+}
 .jobDiv .description{
-  font-size: 15px
+  font-size: 15px;
+  overflow: hidden;
 }
 .moreDetails button{
   width: 100%;
@@ -487,4 +494,19 @@ fieldset td{
   margin-left: 0;
   border-radius: 5px;
   margin-right: 0;
+}
+.jobDescription{
+  width: 100%;
+  padding: 15px;
+  color: #2b4c88
+}
+.jobDescription td{
+  width: 50%;
+  text-align: justify;
+  border-bottom: 1px solid #2b4c88
+}
+.jobDescription th{
+  width: 50%;
+  text-align: justify;
+  border-bottom: 1px solid #2b4c88
 }

@@ -62,12 +62,17 @@ class CompanyAccount extends Component {
         this.setState({
             [ev.target.name]: ev.target.value
         }, () => {
-            console.log(this.state)
+            // console.log(this.state)
         })
     }
 
     post=(ev)=>{
         ev.preventDefault();
+        let number = 0
+        if(this.props.props.state.number){
+            number = Number(this.props.props.state.number);
+        }
+        
         let obj = {
             jobTitle: this.state.jobTitle,
             jobDescription: this.state.jobDescription,
@@ -78,9 +83,11 @@ class CompanyAccount extends Component {
             jobTypeRadio: this.state.jobTypeRadio,
             companyName:this.state.companyName,
             companyEmail: this.state.companyEmail,
-            website: this.state.website
+            website: this.state.website,
+            number: Number(number) + 1
         }
         firebase.database().ref().child(this.state.uid).child("jobs").child(obj.jobTitle).set(obj)
+        firebase.database().ref().child(this.state.uid).child("number").set(obj.number)        
     }
 
     componentWillMount() {

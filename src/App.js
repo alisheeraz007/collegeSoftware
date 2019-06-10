@@ -62,6 +62,12 @@ class App extends Component {
               jobs,
             })
           }
+          if (snap.val().number) {
+            let number = snap.val().number
+            this.setState({
+              number,
+            })
+          }
         })
       } else {
         this.props.history.push("/")

@@ -53,6 +53,9 @@ class StudentPannelPage extends Component {
         document.getElementById("account").className = null
     }
 
+    goBack=()=>{
+        this.props.history.push("/MainDashBoard")
+    }
 
     componentWillMount() {
         // this.authStateChange()
@@ -67,7 +70,7 @@ class StudentPannelPage extends Component {
                 <div className="toggleButtonDiv">
                     <button id="jobs" className="buttonFocus" onClick={this.jobs}>jobs</button>
                     <button id="account" onClick={this.account}>My Account</button>
-                    <button><i className="fas fa-sign-out-alt"></i></button>
+                    <button onClick={this.goBack}><i className="fas fa-sign-out-alt"></i></button>
                 </div>
             </div>
             //: <Loader/>
